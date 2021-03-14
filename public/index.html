@@ -9,22 +9,18 @@
   <title>RailProject</title>
 
     <!-- update the version number as needed -->
-    <script defer src="/__/firebase/8.3.0/firebase-app.js"></script>
+    <!-- <script defer src="/__/firebase/8.3.0/firebase-app.js"></script> -->
     <!-- include only the Firebase features as you need -->
-    <script defer src="/__/firebase/8.3.0/firebase-auth.js"></script>
+    <!-- <script defer src="/__/firebase/8.3.0/firebase-auth.js"></script>
     <script defer src="/__/firebase/8.3.0/firebase-database.js"></script>
     <script defer src="/__/firebase/8.3.0/firebase-firestore.js"></script>
     <script defer src="/__/firebase/8.3.0/firebase-functions.js"></script>
     <script defer src="/__/firebase/8.3.0/firebase-messaging.js"></script>
     <script defer src="/__/firebase/8.3.0/firebase-storage.js"></script>
     <script defer src="/__/firebase/8.3.0/firebase-analytics.js"></script>
-    <script defer src="/__/firebase/8.3.0/firebase-remote-config.js"></script>
-    <script defer src="/__/firebase/8.3.0/firebase-performance.js"></script>
-    <!--
-      initialize the SDK after all desired features are loaded, set useEmulator to false
-      to avoid connecting the SDK to running emulators.
-    -->
-    <script defer src="/__/firebase/init.js?useEmulator=true"></script>
+    <script defer src="/__/firebase/8.3.0/firebase-remote-config.js"></script> -->
+    <!-- <script defer src="/__/firebase/8.3.0/firebase-performance.js"></script> -->
+
 
   </head>
   <body class="grey lighten-3">
@@ -32,7 +28,7 @@
       <nav class="z-depth-0 grey lighten-4">
         <div class="nav-wrapper container">
           <a href="#" class="brand-logo">
-            <img src="img/logo.svg" style="width: 180px; margin-top: 10px;">
+            <img src="img/clipart-train-car-12.png" style="width: 100px; margin-top: 10px;">
           </a>
           <ul id="nav-mobile" class="right hide-on-med-and-down">
               <li class="logged-in">
@@ -136,15 +132,35 @@
 
           <!-- Firebase services!!!! -->
           <!-- The core Firebase JS SDK is always required and must be listed first -->
-          <script src="/__/firebase/8.3.0/firebase-app.js"></script>
+          <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-app.js"></script>
           <script src="/__/firebase/8.3.0/firebase-auth.js"></script>
           <script src="/__/firebase/8.3.0/firebase-firestore.js"></script>
-
           <!-- TODO: Add SDKs for Firebase products that you want to use
           https://firebase.google.com/docs/web/setup#available-libraries -->
 
-          <!-- Initialize Firebase -->
-          <script src="/__/firebase/init.js"></script>
+          <script>
+          // Your web app's Firebase configuration
+          var firebaseConfig = {
+          apiKey: "AIzaSyBYt_dJXNsn8fHKIQUh7dHWf_bOD79rhG8",
+          authDomain: "csc340railway.firebaseapp.com",
+          databaseURL: "https://csc340railway-default-rtdb.firebaseio.com",
+          projectId: "csc340railway",
+          storageBucket: "csc340railway.appspot.com",
+          messagingSenderId: "819716474696",
+          appId: "1:819716474696:web:862241449eceb91e90557d"
+          };
+          // Initialize Firebase
+          firebase.initializeApp(firebaseConfig);
+
+          const auth = firebase.auth();
+          const db = firebase.firestore();
+          </script>
+
+          <!--
+            initialize the SDK after all desired features are loaded, set useEmulator to false
+            to avoid connecting the SDK to running emulators.
+          -->
+          <!-- <script defer src="/__/firebase/init.js?useEmulator=true"></script> -->
 
   </body>
 
