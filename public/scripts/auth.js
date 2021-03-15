@@ -6,8 +6,12 @@ db.collection('Trips').get().then(snapshot => {
 //listen for auth state changes
 auth.onAuthStateChanged(user => {
   if (user){
+
+
     console.log('user logged in', user);
+    setupUI(user);
   } else{
+    setupUI();
     console.log('user logged out');
   }
 })
@@ -26,10 +30,18 @@ signupForm.addEventListener('submit',(e) => {
   //signup user
 
   auth.createUserWithEmailAndPassword(email,password).then((cred) => {
-      const modal = document.querySelector('#modal-signup');
-      M.Modal.getInstance(modal).close();
-      signupForm.reset();
+    return db.collection('Users').doc(cred.user.uid).set({
+      name: signupForm['signup-name'].value,
+      age: signupForm['signup-age'].value,
+      gender: signupForm['signup-gender'].value,
+      email: signupForm['signup-email'].value,
     });
+    
+  }).then(() => {
+    const modal = document.querySelector('#modal-signup');
+    M.Modal.getInstance(modal).close();
+    signupForm.reset();
+  });
 
 });
 
